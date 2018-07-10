@@ -1,0 +1,31 @@
+{
+  "entry": "src/index.js",
+   "theme": {
+        "@icon-url": "'/iconfont/iconfont'"
+    },
+    "disableCSSModules": true,
+    "proxy": {
+      "/v2": {
+        "target": "http://test.dianziren.cn",
+        "changeOrigin": true,
+        "pathRewrite": {"^/v2": ""}
+      }
+    },
+    "publicPath": "",
+    "hash": true,
+    "env": {
+     "development": {
+     "extraBabelPlugins": [
+       "dva-hmr",
+       "transform-runtime",
+       ["import", { "libraryName": "antd", "style": true }]
+     ]
+     },
+     "production": {
+       "extraBabelPlugins": [
+         "transform-runtime",
+         ["import", { "libraryName": "antd", "style": true }]
+       ]
+     }
+   }
+}
